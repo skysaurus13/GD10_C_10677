@@ -44,7 +44,7 @@ class FormEditMahasiswaActivity : AppCompatActivity() {
                 val prodi = txtEditProdi.text.toString()
                 val tgllahir = tglEditView.text.toString()
 
-                RClient.instance.updateData(nim,nama,alamat,prodi,tgllahir).enqueue(object : Callback<ResponseCreate> {
+                RClient.instances.updateData(nim,nama,alamat,prodi,tgllahir).enqueue(object : Callback<ResponseCreate> {
                     override fun onResponse(
                         call: Call<ResponseCreate>,
                         response: Response<ResponseCreate>
@@ -64,7 +64,7 @@ class FormEditMahasiswaActivity : AppCompatActivity() {
         }
     }
     fun getDetailData(nim:String) {
-        RClient.instance.getData(nim).enqueue(object :
+        RClient.instances.getData(nim).enqueue(object :
             Callback<ResponseDataMahasiswa> {
             override fun onResponse(
                 call: Call<ResponseDataMahasiswa>,

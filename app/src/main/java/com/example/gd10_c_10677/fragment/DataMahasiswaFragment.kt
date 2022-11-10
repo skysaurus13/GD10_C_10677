@@ -39,7 +39,7 @@ class DataMahasiswaFragment : Fragment() {
         val bundle = arguments
         val cari = bundle?.getString(/* key = */ "cari")
         binding.progressBar.visibility
-        RClient.instance.getData(cari).enqueue(object :
+        RClient.instances.getData(cari).enqueue(object :
             Callback<ResponseDataMahasiswa>{
             override fun onResponse(
                 call: Call<ResponseDataMahasiswa>,

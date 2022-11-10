@@ -34,7 +34,7 @@ class DetailMahasiswaActivity : AppCompatActivity() {
         }
     }
     fun getDataDetail(nim:String){
-        RClient.instance.getData(nim).enqueue(object :
+        RClient.instances.getData(nim).enqueue(object :
             Callback<ResponseDataMahasiswa> {
             override fun onResponse(
                 call: Call<ResponseDataMahasiswa>,
@@ -76,7 +76,7 @@ class DetailMahasiswaActivity : AppCompatActivity() {
     alert.show()
 }
 private fun doDeleteData(nim:String) {
-    RClient.instance.deleteData(nim).enqueue(object :
+    RClient.instances.deleteData(nim).enqueue(object :
         Callback<ResponseCreate>{
         override fun onResponse(
             call: Call<ResponseCreate>,

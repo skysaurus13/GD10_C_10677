@@ -40,7 +40,7 @@ class FormAddMahasiswaActivity : AppCompatActivity() {
             val prodi = txtProdi.text.toString()
             val lahir = tglView.text.toString()
 
-            RClient.instance.createData(nobp,nama,alamat,prodi,lahir).enqueue(object :
+            RClient.instances.createData(nobp,nama,alamat,prodi,lahir).enqueue(object :
                 Callback<ResponseCreate> {
                 override fun onResponse(
                     call: Call<ResponseCreate>,
